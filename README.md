@@ -5,11 +5,11 @@ Provision Azure with Terraform (https://terraform.io/)
 
 First, set up your development box to use terraform (These steps assume that your development box is Ubuntu, it can as well be your Azure Ubuntu development VM):
 
+[Steps 1 and 2 below are discussed in more detail here: http://munchpress.com/install-golang-1-5-on-ubuntu/
+But such instruction can get out of date quickly, so please make sure that you are using the latest information]
+
 1. Install Go 1.5 (Terraform requires Golang 1.4+)
 2. Set up environment variable GOROOT and add $GOROOT/bin to $PATH
-
-[Steps 1 and 2 are shown here, but such instruction can get out of date quickly, so please make sure that you are using the latest information: http://munchpress.com/install-golang-1-5-on-ubuntu/]
-
 3. Set up GOPATH - create a directory (e.g., "go") in your home directory, and then add this environment variable: [export GOPATH=$HOME/work]. Add it permanently via ~/.bashrc of equivalent means
 4. Add $GOPATH/bin to your $PATH. Do not worry about creating the bin subdirectory right now, just update your PATH environment variable, including permanent modification tactics like ~/.bashrc
 5. install git and mercurial - https://confluence.atlassian.com/bitbucket/set-up-git-and-mercurial-ubuntu-linux-269982882.html
