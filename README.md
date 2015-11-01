@@ -22,7 +22,7 @@ But such instruction can get out of date quickly, so please make sure that you a
 12. Add "$GOPATH/src/github.com/hashicorp/terraform/bin/" to $PATH so that you can run terraform from anywhere. If you are using an Azure Ubuntu Linux VM as your dev box, doing this is easy as running the command "ln -s $GOPATH/src/github.com/hashicorp/terraform/bin/ ~/bin" and then logging out and logging back in
  
 
-Now, you are ready to use the code in this reporsitory
+Now, you are ready to use the code in this repository
 =======================================================
 
 1. git clone this repository
