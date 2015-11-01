@@ -9,7 +9,7 @@ But such instruction can get out of date quickly, so please make sure that you a
 
 1. Install Go 1.5 (Terraform requires Golang 1.4+)
 2. Set up environment variable GOROOT and add $GOROOT/bin to $PATH
-3. Set up GOPATH - create a directory (e.g., "go") in your home directory, and then add this environment variable: [export GOPATH=$HOME/go]. Add it permanently via ~/.bashrc of equivalent means
+3. Set up GOPATH - create a directory (e.g., "go") in your home directory, and then add this environment variable: [export GOPATH=$HOME/go]. Add it permanently via ~/.bashrc or equivalent means
 4. Add $GOPATH/bin to your $PATH. Do not worry about creating the bin subdirectory right now, just update your PATH environment variable, including permanent modification tactics like ~/.bashrc
 5. install git and mercurial - https://confluence.atlassian.com/bitbucket/set-up-git-and-mercurial-ubuntu-linux-269982882.html
 6. cd $GOPATH; mkdir src; cd src; mkdir github.com; cd github.com; mkdir hashicorp; cd hashicorp
