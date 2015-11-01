@@ -1,4 +1,3 @@
-# provision-azure-with-terraform
 
 Provision Azure with Terraform (https://terraform.io/)
 =======================================================
@@ -25,17 +24,20 @@ But such instruction can get out of date quickly, so please make sure that you a
 Now, you are ready to use the code in this repository
 =======================================================
 
-1. git clone this repository
-2. Download your subscription's publishsettings file: https://manage.windowsazure.com/PublishSettings/index?Client=&SchemaVersion=&DisplayTenantSelector=true
-3. if the publishsettings file is not on your Ubuntu dev box, scp it over to your Ubuntu development box
-4. Have an environment variable AZURE_SETTINGS_FILE, and set its value as the full path of your publishsettings file. Note: if the publishsettings file path or name has spaces in it, it is better to rename it such that there are no spaces. Make the enviornment variable permanent using ~/.bashrc or similar techniques
-5. First try the starter kit:
+1. Download your subscription's publishsettings file: https://manage.windowsazure.com/PublishSettings/index?Client=&SchemaVersion=&DisplayTenantSelector=true
+2. if the publishsettings file is not on your Ubuntu dev box, scp it over to your Ubuntu development box
+3. Have an environment variable AZURE_SETTINGS_FILE, and set its value as the full path of your publishsettings file. Note: if the publishsettings file path or name has spaces in it, it is better to rename it such that there are no spaces. Make the enviornment variable permanent using ~/.bashrc or similar techniques
+4. First try the starter kit (which just creates a storage account):
+    git clone this repository
     cd provision-azure-with-terraform/azureterraformstarter
     terraform plan
     (From here on, go ahead and learn other commands from https://terraform.io/docs/index.html, and modify the tf file. Run 'terraform apply', 'terraform destroy' etc.)
-6. You can try the other sample which creates a more complex setup - a virtual network, a security group, a storage account, a security-group-rule, a cloud service, an Ubuntu virtual machine in that cloud service and virtual network, and uses the terraform 'file' and 'remote-exec' provisioners to execute a shell script on the VM that is created - in this example, the shell script sends an email to certain recipients
-7. NOTE: The sample will not work straight away because I have taken out perosnally identiable email account details from it and replaced it with generic placeholders. Make these changes to make it work:
-    a) aaa
+5. If you try the other sample which creates a more complex setup, IT WILL NOT WORK STRAIGHT OUT OF THE BOX UNLESS YOU MAKE THE CHANGES DESCRIBED IN THE NEXT BULLET (because I have taken out perosnally identiable email account details from it and replaced it with generic placeholders). This sample creates a virtual network, a security group, a storage account, a security-group-rule, a cloud service, an Ubuntu virtual machine in that cloud service and inside the virtual network, and uses the terraform 'file' and 'remote-exec' provisioners to execute a shell script on the VM that is created - in this example, the shell script sends an email to certain recipients
+6. NOTE: The sample will not work straight away because I have taken out perosnally identiable email account details from it and replaced it with generic placeholders. Make these changes to make it work:
+    a) (assuming that you git cloned and are currently inside the directory 'provision-azure-with-terraform') cd azureterraformsample
+    b) Edit sample.tf, search for "send-email", and on the line that executes the send-email.sh script, provide one or more real destination email addresses instead of 'your-email-one@your-domain.com' and 'your-email-two@your-domain.com'
+    c) Edit scripts/send-email.sh: replace <<your sender gmail address ending with @gmail.com>> with the correct sending gmail address (like testaccount@gmail.com) and replace <<password for your sender gmail account>> with the password for that gmail account. While replacing, make sure you replace the angular brackets as well! If you want, you can use an yahoo email account instead of gmail, just replace the "smtp.gmail.com:587" with "smtp.mail.yahoo.com:587", and use the yahoo email address and password instead of the gmail account credentials
+7. If you make the above changes and then run 'terraform apply', you should be able to provision the resources described above and get an email to your destination email address notifying you that your linux VM is up and running!
 
 
 
