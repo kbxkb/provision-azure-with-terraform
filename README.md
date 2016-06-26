@@ -43,3 +43,4 @@ Now, you are ready to use the code in this repository
 
 Notes: This is to just get one started with terraform and azure. There are a lot of azure resources being developed, and this tutorial only touches on a basic set of these.
 
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
